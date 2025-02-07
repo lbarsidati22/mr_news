@@ -19,3 +19,17 @@ final class TopHeadlineError extends HomeState {
 
   TopHeadlineError(this.message);
 }
+
+final class RecommnendeLoading extends HomeState {}
+
+final class RecommnendeLoaded extends HomeState {
+  final List<Article>? articles;
+
+  RecommnendeLoaded(this.articles);
+}
+
+final class RecommnendeError extends HomeState {
+  final String message;
+
+  RecommnendeError(this.message);
+}

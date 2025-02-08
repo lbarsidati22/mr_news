@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mr_news/core/model/news_api_response.dart';
 import 'package:mr_news/core/utils/route/app_routes.dart';
 import 'package:mr_news/features/home/pages/home_details_page.dart';
 import 'package:mr_news/features/home/pages/home_page.dart';
 import 'package:mr_news/features/search/pages/search_page.dart';
+import 'package:mr_news/features/search/search_cubit/search_cubit.dart';
 
 class AppRouter {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -23,7 +25,10 @@ class AppRouter {
         );
       case AppRoutes.searchPage:
         return MaterialPageRoute(
-          builder: (_) => SearchPage(),
+          builder: (_) => BlocProvider(
+            create: (context) => SearchCubit(),
+            child: SearchPage(),
+          ),
           settings: settings,
         );
       default:

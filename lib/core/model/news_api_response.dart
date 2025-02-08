@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class NewsApiResponse {
   final String status;
   final int totalResults;
@@ -15,7 +13,7 @@ class NewsApiResponse {
     return {
       'status': status,
       'totalResults': totalResults,
-      'articles': articles?.map((x) => x?.toMap())?.toList(),
+      'articles': articles?.map((x) => x.toMap()).toList(),
     };
   }
 

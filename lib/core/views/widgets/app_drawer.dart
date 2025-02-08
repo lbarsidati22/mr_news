@@ -6,7 +6,7 @@ class AppDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
+    //  final size = MediaQuery.sizeOf(context);
     return Drawer(
       child: Column(
         children: [

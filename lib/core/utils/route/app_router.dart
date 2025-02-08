@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mr_news/core/model/news_api_response.dart';
 import 'package:mr_news/core/utils/route/app_routes.dart';
+import 'package:mr_news/features/home/pages/home_details_page.dart';
 import 'package:mr_news/features/home/pages/home_page.dart';
+import 'package:mr_news/features/search/pages/search_page.dart';
 
 class AppRouter {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -8,6 +11,19 @@ class AppRouter {
       case AppRoutes.home:
         return MaterialPageRoute(
           builder: (_) => HomePage(),
+          settings: settings,
+        );
+      case AppRoutes.homeDetails:
+        final article = settings.arguments as Article;
+        return MaterialPageRoute(
+          builder: (_) => HomeDetailsPage(
+            article: article,
+          ),
+          settings: settings,
+        );
+      case AppRoutes.searchPage:
+        return MaterialPageRoute(
+          builder: (_) => SearchPage(),
           settings: settings,
         );
       default:

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mr_news/core/utils/theme/app_colors.dart';
+import 'package:mr_news/core/utils/route/app_routes.dart';
 import 'package:mr_news/core/views/widgets/app_bar_bottom.dart';
 import 'package:mr_news/core/views/widgets/app_drawer.dart';
 import 'package:mr_news/features/home/home_cubit/home_cubit.dart';
@@ -41,7 +41,11 @@ class _HomePageState extends State<HomePage> {
             AppBarBottom(
               iconData: Icons.search,
               hasPadding: true,
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed(
+                  AppRoutes.searchPage,
+                );
+              },
             ),
             SizedBox(
               width: 10,
